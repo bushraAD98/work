@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاستعلام من خلال الرقم الشخصي - وزارة العمل</title>
+    
+    
+    <link href="/Services/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="/Services/Scripts/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .container {
+            position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            margin-left: 10%;
+            margin-right: 11%;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: 210px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 150px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            left: 50px;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.6;
+        }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+        /* On smaller screens, decrease text size */
+        @media only screen and ( max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+        .img-resize {
+            max-width: 100%;
+            height: auto;
+        }
+        /*
+            -------*/
+        .dropdown {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content {
+            text-align: right;
+            display: none;
+            padding-left: 10px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            text-align: right;
+            display: block;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0px; /* Initially hide the sidebar */
+            height: 100%;
+            width: 200px;
+            background-color: white;
+            /* #818FB4 */
+            padding: 20px;
+            transition: right 0.3s; /* Add transition for smooth animation */
+        }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .sidebar ul li {
+                    margin-bottom: 10px;
+                }
+
+
+
+
+
+
+
+                html,
+body {
+	height: 100%;
+}
+
+
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px #222;
+    
+}
+
+th,
+td {
+	
+ 
+	background-color: rgba(255,255,255,0.2);
+	color: #ffffff50;
+}
+
+td{
+    color: #3f4664;
+    text-align: center;
+}
+
+th {
+	text-align: center;
+    
+}
+
+thead {
+	th {
+		background-color: #3f4664;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+        
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+
+
+
+
+    </style>
+    
+</head>
+
+<body>
+    <div style="direction:rtl;margin-right:1%"> <img src="/Services/Image/logo-0.png" style="height:80px;width:268px;max-width:90%; background-color: white;margin-right:1% " /></div>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: white; color: black; direction: rtl ">
+        <div style="text-align: right;  background-color: white">  </div>
+       
+       
+    </nav>
+
+    
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src data: https: http:; script-src 'self' ;
+          style-src
+'self' ; connect-src 'self'; worker-src 'self' blob:; frame-src 'self' blob:;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .thead {
+            background-color: #364155;
+        }
+
+        /* Ensure the body takes full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the background image */
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./Services/Image/worker.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Ensure it's behind other content */
+            opacity: 0.1; /* Adjust the opacity here */
+        }
+
+        /* Your content styles */
+        .content {
+            position: relative;
+            z-index: 1; /* Ensure it's above the background */
+            color: #fff; /* Example text color */
+            padding: 20px;
+        }
+    </style>
+
+
+</head>
+
+
+<body style="direction:rtl">
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var middlecontent = document.getElementById("workid");
+
+
+            if (middlecontent) {
+                middlecontent.scrollIntoView({ behavior: 'smooth' });
+            }
+
+
+        });
+    </script> -->
+    <div class="background-container"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="table table-hover" style=" background-color: #364155;color:white;margin-top:0px;direction:rtl">
+                <thead>
+                    <tr>
+
+                        <th style="text-align:right;color: white;"> الاستعلام عن العمالة الوافدة من خلال الرقم الشخصي للعامل</th>
+                        <th style="text-align:left">  <div style="display:inline-block;text-align:center;margin-left:3px;border-radius:2px 4px"><a style="color:white" class="btn btn-outline-primary" href="https://www.Molservice.mol.gov.jo/services/home/index"> خدمات الاسـتعلام </a></div></th>
+
+                    </tr>
+
+                </thead>
+            </table>
+        </div>
+        <div class="col-md-3 col-sm-12 col-xs-12">
+
+            <div class="container">
+                
+                <table style="width: 50%;height: 50%; ;">
+                    <thead>
+                        <tr>
+                            <th>المهنة</th>
+                            <th>تاريخ انتهاء الجواز</th>
+                            <th>رقم الجواز </th>
+                            <th>تاريخ الميلاد</th>
+                            <th>الجنسية</th>
+                            <th>الاسم</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>DRIVER</td>
+                            <td>2034/OCT/21</td>
+                            <td>A16561259</td>
+                            <td>20/1997/JUN</td>
+                            <td>BANGLADESH-BGA</td>
+                            <td>UDDIN MOKLES</td>
+                            
+                         
+                        </tr>
+                        <tr>
+                            <td>DRIVER</td>
+                            <td>2026/JUN/07</td>
+                            <td>EJ0228506</td>
+                            <td>01/1986/JAN</td>
+                            <td>BANGLADESH-BGA</td>
+                            <td>RANA MD SOHEL</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>WORKER/DRIVER</td>
+                            <td>2034/JUL/30</td>
+                            <td>A15149096</td>
+                            <td>02/2002/APR</td>
+                            <td>BANGLADESH-BGA</td>
+                            <td>HOSEN LOKMAN</td>
+                            
+                          
+                        </tr>
+                        <tr>
+                            <td>WORKER/DRIVER</td>
+                            <td>2025/DEC/19</td>
+                            <td>EH0334521</td>
+                            <td>12/1998/AUG</td>
+                            <td>BANGLADESH-BGA</td>
+                            <td>UDDIN MD NASIR </td>
+                            
+                          
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+<!-- <form action="/Services/home/PersonalNO" method="post">                <div style="text-align:center;border:solid;border-color:slategray"> <h4 style="padding:1%"> البيانات الخاصة بالعامل  </h4></div>
+                <div style="text-align:center;border:solid;border-color:slategray">
+                    <input class="border bg-gray-100 px-2 py-2 text-l focus:outline-none focus:shadow-outline rounded pl-8" id="searchTerm" name="searchTerm" placeholder="ادخل الرقم الشخصي " required="required" type="number" value="" />
+
+                    <input class="border bg-gray-100 px-2 py-2 text-l focus:outline-none focus:shadow-outline rounded pl-8" id="searchTerm1" name="searchTerm1" placeholder="ادخرل تاريخ الاولادة  " required="required" type="date" value="" />
+                </div>
+                <div style="text-align:center;border:solid;border-color:slategray">
+                    <b style="text-align:center">  
+<script type="text/javascript">
+$(function () {$('#91889059e58a4e89a0b171f710d83f60').show();})
+function ______c10c056588b34d628c4db7927d62ad70________() { $('#91889059e58a4e89a0b171f710d83f60').hide(); $.post("/Services/DefaultCaptcha/Refresh", { t: $('#CaptchaDeText').val(), __m__: "0" }, function(){$('#91889059e58a4e89a0b171f710d83f60').show();}); return false; }</script> 
+<br/>
+<img id="CaptchaImage" src="/Services/DefaultCaptcha/Generate?t=315d0e656ff9422ab8acd6243b03721e"/><input id="CaptchaDeText" name="CaptchaDeText" type="hidden" value="315d0e656ff9422ab8acd6243b03721e" /> <br/><a href="#CaptchaImage" id="91889059e58a4e89a0b171f710d83f60" onclick="______c10c056588b34d628c4db7927d62ad70________()" style="display:none;">Refresh</a><br/>The answer is<br/><input autocomplete="off" autocorrect="off" id="CaptchaInputText" name="CaptchaInputText" type="text" value="" /><br/></b>
+                </div>
+                <div style="text-align:center;border:solid;border-color:slategray">
+
+                    <div class="btn btn-outline-secondary" style="display:inline-block;text-align:center;margin-left:3px;border-radius:2px 4px"> <input value="استعلام" type="submit" class="btn btn-outline-secondary" , style="color:black;font-size:larger;width:200px;background-color:white" /></div>
+                </div>
+                <div style="text-align:center;border:solid;border-color:slategray">
+
+                    <h4 colspan="2" style="text-align:center;color:darkred">   </h4>
+
+                </div>
+</form>
+
+
+        </div> -->
+        <div class="col-md-9 col-sm-12 col-xs-12">
+            <table class="table table-hover" style="width:100%;direction:rtl" id="workid">
+
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                        </tr>
+                    </thead>
+
+
+            </table>
+        </div>
+        </div>
+</body>
+
+
+
+    
+</body>
+</html>
